@@ -1,6 +1,8 @@
-const jankenSet = ["Rock", "Paper", "Scissors"];
+// game variables
 let score = { lose: 0, win: 0, tie: 0 };
+const jankenSet = ["Rock", "Paper", "Scissors"];
 const resultEmoji = { lost: "🙊", won: "🤌" };
+// html elements
 const buttons = document.querySelectorAll(".btn");
 const playerScore = document.querySelector("#player");
 const computerScore = document.querySelector("#computer");
