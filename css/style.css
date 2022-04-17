@@ -40,10 +40,48 @@ p{
 .btn{
   text-decoration: none;
   font-size: 26px;
-  color: #1fe8b6;
   margin: 20px;
   background-color: #bd93f9;
   border: none;
   border-radius: 8px;
 }
 
+.footer{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.scoreboard{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+}
+
+.btn{
+  
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  background: #673ab7;
+  color: #FFFFFF;
+  border-radius: 8px;
+  padding: 14px 24px 16px;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1;
+  transition: transform 200ms,background 200ms;
+  
+}
+
+.btn:hover{
+  transform: translateY(-2px);
+}

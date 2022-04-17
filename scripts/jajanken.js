@@ -2,13 +2,16 @@
 let score = { lose: 0, win: 0, tie: 0 };
 const jankenSet = ["Rock", "Paper", "Scissors"];
 const resultEmoji = { lost: "🙊", won: "🤌" };
+const choiceEmoji = { 0: "✊", 1: "🖐️", 2: "✌️" };
 // html elements
 const buttons = document.querySelectorAll(".btn");
 const playerScore = document.querySelector("#player");
 const computerScore = document.querySelector("#computer");
+const playerSelect = document.querySelector("#playerIcon");
+const cpuSelect = document.querySelector("#cpuIcon");
 const winText = document.querySelector("h2");
 const resultText = document.querySelector("h3");
-const resetBtn = createResteBtn();
+const resetBtn = createResetBtn();
 
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -24,6 +27,9 @@ buttons.forEach((button) => {
       resultText.textContent = textResult[1];
       playerScore.textContent = `🐵: ${score["win"]}`;
       computerScore.textContent = `🤖: ${score["lose"]}`;
+      playerSelect.textContent = choiceEmoji[player];
+      cpuSelect.textContent = choiceEmoji[computer];
+      console.log(choiceEmoji[computer]);
     }
 
     if (isGameOver()) endGame();
@@ -48,9 +54,9 @@ function resetGame() {
   computerScore.textContent = `🤖: 0`;
 }
 
-function createResteBtn() {
+function createResetBtn() {
   btn = document.createElement("button");
-  btn.setAttribute("id", "reset");
+  btn.setAttribute("class", "btn");
   btn.addEventListener("click", () => resetGame());
   btn.textContent = "Play again";
   btn.addEventListener("click", resetGame);
